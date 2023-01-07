@@ -1,29 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Proptypes from 'prop-types'
+import styles from './Image.module.css'
 
 const Image = ({ item }) => {
+  const [showDiv, setShowDiv] = useState(false)
   const { largeImageURL, previewURL, tags, views, likes } = item
-  return (
-    <div className='card col-2 row-2'>
-      <img
-        src={previewURL}
-        alt={tags}
-        className='card-img-top'
-      />
-      <div className='card-body'>
-        <span className='card-text'>{tags}</span>
-        <span className='card-text'> Visitas : {views}</span>
-        <span className='card-text'>Favoritos : {likes}</span>
-      </div>
 
-      <div className='card-footer'>
-        <a
-          href={largeImageURL}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='btn btn-lg btn-dark'
-        >Ver imagen
-        </a>
+  const newTags = tags.split(', ')
+
+  const handleShowDiv = () => {
+    setShowDiv(!showDiv)
+  }
+
+  return (
+    <div className={styles.image__container}>
+      <a
+        href={largeImageURL}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        {showDiv && (
+          <div
+            className={styles.image__img_text}
+            onMouseLeave={handleShowDiv}
+          >
+            <div>
+              <span> Visitas : {views}</span>
+              <span>Favoritos : {likes}</span>
+            </div>
+          </div>
+        )}
+        <img
+          src={previewURL}
+          alt={tags}
+          className={styles.image__img}
+          onMouseEnter={handleShowDiv}
+        />
+      </a>
+      <div className={styles.img__tag_container}>
+        {newTags.map(item => (
+          <span className={styles.img__tag} key={item}>{item}</span>
+        ))}
       </div>
     </div>
   )

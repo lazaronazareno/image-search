@@ -1,0 +1,48 @@
+.image__container {
+  display: flex;
+  flex-direction: column;
+  width: 12rem;
+  position: relative;
+  gap: 0.5rem;
+}
+
+.image__img, .image__img_text {
+  width: 12rem;
+  height: 10rem;
+  aspect-ratio: 1/1;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: 'all 0.5s ease-in-out',
+}
+
+.image__img_text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: #faebd7a8;
+  color: black;
+  justify-content: flex-end;
+}
+
+.image__img_text div {
+  text-align: center;
+  background: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 0px 16px 16px;
+}
+
+.img__tag_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: center;
+}
+
+.img__tag {
+  padding: .5rem;
+  border-radius: 16px;
+  background-color: antiquewhite;
+  aspect-ratio: 4/1;
+  text-align: center;
+}

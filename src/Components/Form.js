@@ -26,19 +26,19 @@ const Form = ({ setQuery }) => {
         <input
           type='text'
           className='form-control form-control-lg'
-          placeholder='Busca una imagen...'
+          placeholder='Search an image...'
           onChange={e => setValue(e.target.value)}
         />
 
         <button
           className='btn btn-lg btn-primary'
           type='submit'
-        >Buscar
+        >Search
         </button>
 
       </div>
 
-      {error ? <Error message='Hay un error' /> : null}
+      {error ? <Error message='The field is required' /> : null}
     </form>
   )
 }

@@ -50,27 +50,29 @@ function App () {
         setQuery={setQuery}
       />
       <ListImages data={data} />
-
-      {
+      <div className='d-flex justify-content-evenly'>
+        {
         actualPage === 1
           ? null
           : (
             <button
               className='btn btn-info m-2'
               onClick={handlePrevPage}
-            >&laquo; Anterior
+            >&laquo; Previous Page
             </button>)
       }
-      {
+        {
         actualPage === totalPages
           ? null
           : (
             <button
               className='btn btn-info m-2'
               onClick={handleNextPage}
-            > Siguiente &raquo;
+            > Next Page &raquo;
             </button>)
       }
+      </div>
+
     </div>
   )
 }
