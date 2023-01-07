@@ -45,7 +45,7 @@ function App () {
   }
   return (
     <div className='container-fluid bg-dark' style={{ minHeight: '100vh' }}>
-      <h1 className='text-center text-light heading-title'>Image Searcher</h1>
+      <h1 className='text-center text-light heading-title py-4'>Image Searcher</h1>
       <Form
         setQuery={setQuery}
       />
