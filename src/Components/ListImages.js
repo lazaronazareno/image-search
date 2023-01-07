@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from './Image'
+import Proptypes from 'prop-types'
 
 const ListImages = ({ data }) => {
   return (
@@ -9,6 +10,10 @@ const ListImages = ({ data }) => {
       ))}
     </div>
   )
+}
+
+ListImages.propTypes = {
+  data: Proptypes.array.isRequired
 }
 
 export default ListImages

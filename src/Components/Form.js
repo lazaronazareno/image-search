@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Error from './Error'
+import Proptypes from 'prop-types'
 
 const Form = ({ setQuery }) => {
   const [value, setValue] = useState('')
@@ -40,6 +41,10 @@ const Form = ({ setQuery }) => {
       {error ? <Error message='Hay un error' /> : null}
     </form>
   )
+}
+
+Error.proptypes = {
+  setQuery: Proptypes.func.isRequired
 }
 
 export default Form
